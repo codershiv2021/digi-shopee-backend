@@ -8,7 +8,7 @@ const UserSchema = new mongoose.Schema(
     isAdmin: {
       type: Boolean,
       default: false,
-    },
+    }, //hata dena as I haven't added isAdmin in verify token and user js in routes
   },
   { timestamps: true }
 );
