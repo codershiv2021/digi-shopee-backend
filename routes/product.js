@@ -1,8 +1,11 @@
-const Product = require("./models/Product");
+const Product = require("../models/Product");
 const {
       verifyToken,
       verifyTokenAndAuthorization,
     } = require("./verifyToken");
+
+const router = require("express").Router();
+
 
 //get the product
 router.get("/find/:id", async (req, res) => {

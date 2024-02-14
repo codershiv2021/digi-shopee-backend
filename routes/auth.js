@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const User = require("../models/User");
+const jwt = require("jsonwebtoken");
 
 //REGISTER
 
@@ -16,10 +17,10 @@ router.post("/register", async(req,res)=>{
       }
       catch(err){
             console.log("err");
-            res.status(300).json(err); //chatgpt
+            res.status(300).json(err); 
       }
 })
-module.exports=router;
+
 
 //LOGIN
 
@@ -51,9 +52,8 @@ router.post('/login', async (req, res) => {
             const { password, ...others } = user._doc;  
             res.status(200).json({...others, accessToken});
   
-  
       } catch (error) {
-          console.error('Error during login:', error);
-          res.status(500).json("Internal Server Error");
+        res.status(500).json(err);
       }
   });
+  module.exports = router;

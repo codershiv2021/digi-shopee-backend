@@ -18,3 +18,4 @@ const {
     } = require("./verifyToken");
     
 const router = require("express").Router();
+module.exports = router;
